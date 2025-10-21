@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- 顶部标签栏 -->
+    <TextView
+        android:id="@+id/tvSpaceStations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Space Stations"
+        android:textSize="16sp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivSpaceStations"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/space_station_icon"
+        app:layout_constraintBottom_toTopOf="@id/tvSpaceStations"
+        app:layout_constraintEnd_toEndOf="@id/tvSpaceStations"
+        app:layout_constraintStart_toStartOf="@id/tvSpaceStations" />
+
+    <TextView
+        android:id="@+id/tvFlights"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Flights"
+        android:textSize="16sp"
+        android:layout_marginStart="32dp"
+        app:layout_constraintStart_toEndOf="@id/tvSpaceStations"
+        app:layout_constraintTop_toTopOf="@id/tvSpaceStations" />
+
+    <ImageView
+        android:id="@+id/ivFlights"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/rocket_icon"
+        app:layout_constraintBottom_toTopOf="@id/tvFlights"
+        app:layout_constraintEnd_toEndOf="@id/tvFlights"
+        app:layout_constraintStart_toStartOf="@id/tvFlights" />
+
+    <TextView
+        android:id="@+id/tvRovers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rovers"
+        android:textSize="16sp"
+        android:layout_marginStart="32dp"
+        app:layout_constraintStart_toEndOf="@id/tvFlights"
+        app:layout_constraintTop_toTopOf="@id/tvSpaceStations" />
+
+    <ImageView
+        android:id="@+id/ivRovers"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/rover_icon"
+        app:layout_constraintBottom_toTopOf="@id/tvRovers"
+        app:layout_constraintEnd_toEndOf="@id/tvRovers"
+        app:layout_constraintStart_toStartOf="@id/tvRovers" />
+
+    <TextView
+        android:id="@+id/tvDCA"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:background="#008000"
+        android:gravity="center"
+        android:text="DCA"
+        android:textColor="#FFFFFF"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSpaceStations" />
+
+    <ImageView
+        android:id="@+id/ivArrow"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/double_arrows"
+        app:layout_constraintEnd_toStartOf="@id/tvMars"
+        app:layout_constraintStart_toEndOf="@id/tvDCA"
+        app:layout_constraintTop_toTopOf="@id/tvDCA" />
+
+    <TextView
+        android:id="@+id/tvMars"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:background="#008000"
+        android:gravity="center"
+        android:text="MARS"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toEndOf="@id/ivArrow"
+        app:layout_constraintTop_toTopOf="@id/tvDCA" />
+
+    <!-- 单程/往返开关 -->
+    <TextView
+        android:id="@+id/tvOneWay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="One Way"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@id/tvDCA"
+        app:layout_constraintTop_toBottomOf="@id/tvDCA" />
+
+    <Switch
+        android:id="@+id/switchOneWay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@id/tvOneWay"
+        app:layout_constraintTop_toTopOf="@id/tvOneWay" />
+
+    <!-- 旅行者数量 -->
+    <TextView
+        android:id="@+id/tvTraveller"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1 Traveller"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@id/tvOneWay"
+        app:layout_constraintTop_toBottomOf="@id/tvOneWay" />
+
+    <!-- 底部图标 -->
+    <ImageView
+        android:id="@+id/ivRocket"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/rocket_icon"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="@id/tvDCA"
+        app:layout_constraintTop_toBottomOf="@id/tvTraveller" />
+
+    <ImageView
+        android:id="@+id/ivPlanet"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/galaxy"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toEndOf="@id/ivRocket"
+        app:layout_constraintTop_toBottomOf="@id/tvTraveller" />
+
+    <!-- 出发按钮 -->
+    <Button
+        android:id="@+id/btnDepart"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="#008000"
+        android:text="DEPART"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
